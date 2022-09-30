@@ -58,13 +58,10 @@ jobs:
 
       - name: Lint
         if: matrix.should_lint
-        env:
-          MIX_ENV: prod
         run: |
-          mix do \
-            format --check-formatted \
-            compile --warnings-as-errors \
-            dialyzer
+          mix format --check-formatted
+          mix compile --warnings-as-errors
+          mix dialyzer --format github
 
       - name: Run Tests
         run: mix test
