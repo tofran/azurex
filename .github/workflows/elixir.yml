@@ -61,8 +61,10 @@ jobs:
         env:
           MIX_ENV: prod
         run: |
-          mix format --check-formatted
-          mix compile --warnings-as-errors
+          mix do \
+            format --check-formatted \
+            compile --warnings-as-errors \
+            dialyzer
 
       - name: Run Tests
         run: mix test
