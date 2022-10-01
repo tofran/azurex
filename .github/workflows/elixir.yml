@@ -8,29 +8,32 @@ jobs:
   build:
     name: Build and test
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
         elixir:
+          - '1.14'
           - '1.13'
           - '1.12'
           - '1.11'
           - '1.10'
         otp:
+          - '25.x'
           - '24.x'
           - '23.x'
           - '22.x'
         exclude:
-          - elixir: '1.10'
-            otp: '24.x'
-          - elixir: '1.10'
+          - elixir: '1.14'
+            otp: '22.x'
+          - elixir: '1.13'
             otp: '25.x'
           - elixir: '1.13'
             otp: '22.x'
-          - elixir: '1.13'
-            otp: '22.x'
-          - elixir: '1.14'
-            otp: '22.x'
+          - elixir: '1.10'
+            otp: '25.x'
+          - elixir: '1.10'
+            otp: '24.x'
         include:
           - should_lint: true
             elixir: '1.13'
