@@ -38,16 +38,12 @@ jobs:
             otp: '24'
 
           - elixir: '1.11'
-            otp: '21'
-          - elixir: '1.11'
             otp: '22'
           - elixir: '1.11'
             otp: '23'
           - elixir: '1.11'
             otp: '24'
 
-          - elixir: '1.10'
-            otp: '21'
           - elixir: '1.10'
             otp: '22'
           - elixir: '1.10'
